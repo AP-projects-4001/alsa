@@ -46,13 +46,6 @@ set(PROJECT_SOURCES
         how_much_money.h
         how_much_money.cpp
         how_much_money.ui
-        all_of_shape.h
-        all_of_shape.cpp
-        all_of_shape.ui
-        dress.h dress.cpp dress.ui
-        mobail.h mobail.cpp mobail.ui
-        labtop.h labtop.cpp labtop.ui
-
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
