@@ -25,21 +25,37 @@ private slots:
     void on_buy_button(QString id);
     void on_detail_button(QString id);
     void on_report_button(QString id);
+    void on_back_button();
+    void on_next_button();
+    void on_privious_button();
 
 private:
-    QGroupBox *createGroup();
+    QGroupBox* createGroup(int index);
+    QGroupBox* createEmptyGroup();
 
     QVector<QPushButton*> buttons;
     QVector<QLabel*> labels;
     QVector<QLineEdit*> lineedits;
-    QVector<QGridLayout*> hlayout;
     QVector<QVBoxLayout*> vlayout;
-    QVector<QHBoxLayout*> glayout;
+    QVector<QHBoxLayout*> hlayout;
+    QVector<QGroupBox*> groups;
+
+    QGridLayout *grid;
 
     static int number;
+    void show_list(int i);
+
     QPushButton* buy;
     QPushButton* detail;
     QPushButton* report;
+    QPushButton* back;
+    QPushButton* next;
+    QPushButton* buy_list;
+    QPushButton* privious;
+    QLineEdit* page_number;
+    QLabel* numbers;
+    QHBoxLayout* button_lay;
+    QHBoxLayout* button_lay1;
 };
 
 #endif // LIST_PRUDUCT_H
