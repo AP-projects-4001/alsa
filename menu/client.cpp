@@ -2,7 +2,7 @@
 #include "ui_client.h"
 #include "register.h"
 #include "forgetpassword.h"
-#include "increase_bank_card_balance.h"
+#include "client_meno.h"
 #include <QFile>
 #include <QMessageBox>
 client::client(QWidget *parent) :
@@ -65,8 +65,9 @@ void client::on_buttonBox_accepted()
             is_valid2 = true;
     }
     if(is_valid1 == true && is_valid2 == true){
-        Increase_bank_card_balance *d = new Increase_bank_card_balance(this);
+        client_meno *d = new client_meno(this);
         d->show();
+        close();
     }
     else{
         int ret;
@@ -75,6 +76,5 @@ void client::on_buttonBox_accepted()
         ret = msgBox.exec();
         return;
     }
-
 }
 
