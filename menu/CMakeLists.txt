@@ -37,15 +37,17 @@ set(PROJECT_SOURCES
         customer_register.h
         customer_register.cpp
         customer_register.ui
-        increase_bank_card_balance.h
-        increase_bank_card_balance.cpp
-        increase_bank_card_balance.ui
         increase_money.h
         increase_money.cpp
         increase_money.ui
         how_much_money.h
         how_much_money.cpp
         how_much_money.ui
+        client_meno.cpp
+        client_meno.h
+        client_meno.ui
+        list_pruduct.h
+        list_pruduct.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
