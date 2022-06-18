@@ -59,6 +59,7 @@ forget_password_client::~forget_password_client()
     delete ui;
 }
 
+
 void forget_password_client::on_buttonBox_accepted()
 {
        read_file();
