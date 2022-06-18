@@ -85,7 +85,7 @@ void MainWindow::read_file(){
 void MainWindow::on_pushButton_4_clicked()
 {
     if(ui->lineEdit->text() == "admin" && ui->lineEdit_2->text() =="admin" ){
-        /***********************************************************************/
+        /***********************FORADDMIN***********************************/
     }
     else if(ui->lineEdit->text() == "customer"){
         read_file("Login_customer.txt");
@@ -105,7 +105,7 @@ void MainWindow::on_pushButton_4_clicked()
                ret = msgBox.exec();
            }
            else{
-            /*********************************************/
+            /********************FOR CUSTOMER*************************/
            }
     }
     else{
@@ -126,7 +126,7 @@ void MainWindow::on_pushButton_4_clicked()
                   ret = msgBox.exec();
               }
               else{
-               /*********************************************/
+               /*******************FOR CLIENT************************/
               }
      }
 
