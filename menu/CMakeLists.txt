@@ -48,6 +48,9 @@ set(PROJECT_SOURCES
         client_meno.ui
         list_pruduct.h
         list_pruduct.cpp
+        product_detail.cpp
+        product_detail.h
+        product_detail.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -55,7 +55,6 @@ private:
     QLineEdit* page_number;
     QLabel* numbers;
     QHBoxLayout* button_lay;
-    QHBoxLayout* button_lay1;
 };
 
 #endif // LIST_PRUDUCT_H

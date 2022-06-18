@@ -2,7 +2,7 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QFile>
-#include <QMessageBox>
+#include "product_detail.h"
 
 int list_pruduct::number = 0;
 
@@ -10,6 +10,9 @@ QGroupBox* list_pruduct::createGroup(int index)
 {
     QFile inputFile("pruduct.txt");
     QStringList split;
+
+    setFixedHeight(590);
+    setMaximumHeight(590);
 
     if (inputFile.open(QIODevice::ReadOnly))
     {
@@ -105,18 +108,20 @@ QGroupBox* list_pruduct::createGroup(int index)
 
 QGroupBox *list_pruduct::createEmptyGroup()
 {
-    QGroupBox *groupBox = new QGroupBox;
+    QGroupBox *groupBox = new QGroupBox{" "};
     groups.push_back(groupBox);
 
     setFixedWidth(920);
     setMaximumWidth(920);
+    setFixedHeight(590);
+    setMaximumHeight(590);
 
     return groupBox;
 }
 
 void list_pruduct::show_list(int index)
 {
-    int count = (index - 1) * 12 + 1;
+    int count = (index - 1) * 12;
 
     for(int i = 0; i < 4; i++)
         for(int j = 0; j < 3; j++)
@@ -138,12 +143,13 @@ list_pruduct::list_pruduct(QWidget *parent) :
     setWindowTitle(tr("لیست محصولات"));
     setFixedWidth(920);
     setMaximumWidth(920);
+    setFixedHeight(585);
+    setMaximumHeight(585);
 
     grid = new QGridLayout{this};
     show_list(1);
 
     button_lay = new QHBoxLayout();
-    button_lay1 = new QHBoxLayout();
 
     back = new QPushButton{"بازگشت"};
     connect(back,&QPushButton::clicked,[this] { on_back_button(); });
@@ -168,12 +174,10 @@ list_pruduct::list_pruduct(QWidget *parent) :
     button_lay->addWidget(page_number);
     button_lay->addWidget(numbers);
     button_lay->addWidget(next);
+    button_lay->addWidget(buy_list);
+    button_lay->addWidget(back);
 
-    button_lay1->addWidget(buy_list);
-    button_lay1->addWidget(back);
-
-    grid->addLayout(button_lay, 4, 1, 1, 1);
-    grid->addLayout(button_lay1, 4, 2, 1, 1);
+    grid->addLayout(button_lay, 4, 1, 1, 2);
 
     setLayout(grid);
 }
@@ -185,7 +189,11 @@ void list_pruduct::on_buy_button(QString id)
 
 void list_pruduct::on_detail_button(QString id)
 {
-    /*----------------------------------------*/
+    Product_detail* temp = new Product_detail{this};
+    connect(this, SIGNAL(sendString(QString)), temp, SLOT(showString(QString)));
+    temp->show();
+
+    emit sendString(id);
 }
 
 void list_pruduct::on_report_button(QString id)
@@ -260,7 +268,6 @@ list_pruduct::~list_pruduct()
     delete page_number;
     delete numbers;
     delete button_lay;
-    delete button_lay1;
 
     for(int i = 0; i < buttons.length(); i++)
         delete buttons[i];

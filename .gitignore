@@ -2,7 +2,7 @@
 # ----------------------------------------------------------------------------
 CMakeLists.txt.user
 .gitignore
-CMakeLists.txt.user.*
+CMakeLists.*
 *~
 build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/*
 CMakeLists.txt.user
