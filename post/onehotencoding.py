@@ -18,76 +18,72 @@ coords_2 = (lat_company,long_company)
 dist = geopy.distance.distance(coords_1, coords_2).km
 #*************************PREDICT***************************#
 mylist = []
-gul = 0 ; albrz = 0 ; ardbil = 0 ; azrgh = 0 ; azrshrgh = 0 ; bshhr = 0 ; chramahal = 0;
-esf = 0 ; fars = 0 ; ghzvin = 0 ; ghm = 0 ; golstn = 0 ; hamdn = 0 ; hrmz = 0 ; ilam = 0;
-kerman = 0 ; kermsh = 0 ; khzstn = 0 ; khrsnj = 0 ; khrsnsh = 0 ; khrsnrz = 0 ; khg = 0;
-krdstn = 0 ; lrstn = 0 ; mrkzi = 0 ; mzndrn = 0 ; smnm = 0 ; shrz = 0 ; sistn = 0 ; tehran = 0 ; yzd = 0 ; znj = 0; 
-for i in range(1,35):
-    mylist.append(1);
+for i in range(32):
+    mylist.append(0);
 if(myState == "Guilan"):
-    gul = 1;
+    mylist[0] +=1;
 elif(myState == 'alborz'):
-    albrz = 1;    
+    mylist[1] +=1;  
 elif(myState == 'ardebil'):
-    ardbil = 1;
+    mylist[2] +=1;
 elif(myState == 'azarbayejangharbi'):
-    azrgh = 1;
+    mylist[3] +=1;
 elif(myState == 'azarbayejansharghi'):
-    azrshrgh = 1;
+    mylist[4] +=1;
 elif(myState == 'booshehr'):
-    bshhr = 1;
+    mylist[5] +=1;
 elif(mylist == 'chaharmahal'):
-    chramahal = 1;
+    mylist[6] +=1;
 elif(myState == 'esfahan'):
-    esf = 1;
+    mylist[7] +=1;
 elif(myState == 'fars'):
-    fars = 1;
+    mylist[8] +=1;
 elif(myState == "ghazvin"):
-    ghzvin = 1;
+    mylist[9] +=1;
 elif(myState == "ghom"):
-    ghm = 1;
+    mylist[10] +=1;
 elif(myState == "golestan"):
-    golstn = 1;
+    mylist[11] +=1;
 elif(myState == "hamedan"):
-    hamdn = 1;
+    mylist[12] +=1;
 elif(myState == "hormozgan"):
-    hrmz = 1;
+    mylist[13] +=1;
 elif(myState == "ilam"):
-    ilam = 1;
+    mylist[14] +=1;
 elif(myState == "kerman"):
-    kerman = 1;
+    mylist[15] +=1;
 elif(myState == "kermanshah"):
-    kermsh = 1;
+    mylist[16] +=1;
 elif(myState == "khoozestan"):
-    khzstn = 1;
+    mylist[17] +=1;
 elif(myState == "khorasanjonoobi"):
-    khrsnj = 1;
+    mylist[18] +=1;
 elif(myState == "khorasanrazavi"):
-    khrsnrz = 1;
+    mylist[19] +=1;
 elif(myState == 'khorasanshomali'):
-    khrsnsh = 1;
+    mylist[20] +=1;
 elif(myState == 'kohgiloye'):
-    khg = 1;
+    mylist[21] +=1;
 elif(myState == 'kordestan'):
-    krdstn = 1;
+    mylist[22] +=1;
 elif(myState == 'lorestan'):
-    lrstn = 1;
+    mylist[23] +=1;
 elif(myState == 'markazi'):
-    mrkzi = 1;
+    mylist[24] +=1;
 elif(myState == 'mazandaran'):
-    mzndrn = 1;
+    mylist[25] +=1;
 elif(myState == 'semnan'):
-    smnm = 1;
+    mylist[26] +=1;
 elif(myState == 'shiraz'):
-    shrz = 1;
+    mylist[27] +=1;
 elif(myState == 'sistanvabaloochestan'):
-    sistn = 1;
+    mylist[28] +=1;
 elif(myState == 'tehran'):
-    tehran = 1;
+    mylist[29] +=1;
 elif(myState == 'yazd'):
-    yzd = 1;
+    mylist[30] +=1;
 elif(myState == 'zanjzn'):
-    znj = 1;                  
+    mylist[31] +=1;                  
 else:
     print('This state does not exist...!!!')
     exit();                                                                                                         
@@ -100,8 +96,10 @@ all = df4.drop(['price'],axis='columns');
 P = df4.price;
 Reg.fit(all,P);
 print(Reg.predict
-([[dist,gul,albrz,ardbil,azrgh,azrshrgh
-,bshhr,chramahal,esf,fars,ghzvin,ghm,golstn,hamdn,hrmz,ilam
-,kerman,kermsh,khzstn,khrsnj,khrsnsh,khrsnrz,khg,krdstn,lrstn
-,mrkzi,mzndrn,smnm,shrz,sistn,tehran,yzd,znj
+([[dist,mylist[0],mylist[1],mylist[2],mylist[3],mylist[4]
+,mylist[5],mylist[6],mylist[7],mylist[8],mylist[9],mylist[10]
+,mylist[11],mylist[12],mylist[13],mylist[14],mylist[15],mylist[16]
+,mylist[17],mylist[18],mylist[19],mylist[20],mylist[21],mylist[22]
+,mylist[23],mylist[24],mylist[25],mylist[26],mylist[27],mylist[28]
+,mylist[29],mylist[30],mylist[31]
 ]]))
