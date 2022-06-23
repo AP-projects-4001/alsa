@@ -85,7 +85,7 @@ void increase_money::on_buttonBox_accepted()
     {
         int ret;
         QMessageBox msgBox;
-        msgBox.setText("شماره کارت وجود خارجی ندارد...!!!");
+        msgBox.setText("این شماره کارت وجود ندارد!!!!");
         ret = msgBox.exec();
         return;
     }
@@ -105,7 +105,7 @@ void increase_money::on_buttonBox_accepted()
     else{
         int ret;
         QMessageBox msgBox;
-        msgBox.setText("رمز یا سی وی وی 2 اشتباه است ...!!! ");
+        msgBox.setText("رمز یا سی وی وی 2 اشتباه است !!!! ");
         ret = msgBox.exec();
         return;
     }
