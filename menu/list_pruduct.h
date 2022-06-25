@@ -19,7 +19,8 @@ public:
     int countlines(QString fname);
 
 signals:
-    void sendString(QString);
+    void sendId(QString,QString);
+    void sendPruductId(QString);
 
 private slots:
     void on_buy_button(QString id);
@@ -28,8 +29,12 @@ private slots:
     void on_back_button();
     void on_next_button();
     void on_privious_button();
+    void getUserName(QString str);
+    void on_buy_list_button();
 
 private:
+    QString username;
+
     QGroupBox* createGroup(int index);
     QGroupBox* createEmptyGroup();
 
@@ -44,7 +49,6 @@ private:
 
     static int number;
     void show_list(int i);
-
     QPushButton* buy;
     QPushButton* detail;
     QPushButton* report;

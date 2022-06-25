@@ -22,7 +22,7 @@ void Product_detail::on_pushButton_clicked()
     close();
 }
 
-void Product_detail::showString(QString str)
+void Product_detail::getPruductId(QString str)
 {
     QFile inputFile("pruduct.txt");
     QStringList split;

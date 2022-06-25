@@ -17,7 +17,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void showString(QString str);
+    void getPruductId(QString str);
 
 private:
     Ui::Product_detail *ui;

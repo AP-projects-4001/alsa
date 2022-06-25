@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>client</class>
- <widget class="QDialog" name="client">
+ <class>client_registor</class>
+ <widget class="QDialog" name="client_registor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>320</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>400</width>
-    <height>320</height>
+    <height>450</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>400</width>
-    <height>320</height>
+    <height>450</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,8 +28,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
+     <x>-80</x>
+     <y>390</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -41,12 +41,90 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>30</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>نام کاربری =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>90</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>رمز  =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>270</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>شماره کارت  =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>330</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>= CVV2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>150</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>آدرس =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>شماره تلفن  =</string>
+   </property>
+  </widget>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>20</y>
-     <width>161</width>
+     <x>62</x>
+     <y>30</y>
+     <width>221</width>
      <height>28</height>
     </rect>
    </property>
@@ -54,89 +132,51 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>70</y>
-     <width>161</width>
+     <x>62</x>
+     <y>90</y>
+     <width>221</width>
      <height>28</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>20</y>
-     <width>91</width>
-     <height>20</height>
+     <x>62</x>
+     <y>150</y>
+     <width>221</width>
+     <height>28</height>
     </rect>
-   </property>
-   <property name="text">
-    <string> = نام کاربری</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLineEdit" name="lineEdit_4">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>63</width>
-     <height>20</height>
+     <x>62</x>
+     <y>210</y>
+     <width>221</width>
+     <height>28</height>
     </rect>
-   </property>
-   <property name="text">
-    <string> = رمز</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLineEdit" name="lineEdit_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>120</y>
-     <width>301</width>
-     <height>20</height>
+     <x>62</x>
+     <y>270</y>
+     <width>221</width>
+     <height>28</height>
     </rect>
-   </property>
-   <property name="text">
-    <string>ثبت نام نکرده اید؟روی دکمه روبه رو کیلیک کنید.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QLineEdit" name="lineEdit_6">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>120</y>
-     <width>83</width>
-     <height>29</height>
+     <x>62</x>
+     <y>330</y>
+     <width>221</width>
+     <height>28</height>
     </rect>
-   </property>
-   <property name="text">
-    <string>ثبت نام</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>170</y>
-     <width>311</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>برای فراموشی رمز روی دکمه رو به رو کلیک کنید.</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>170</y>
-     <width>83</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>فراموشی رمز</string>
    </property>
   </widget>
  </widget>
@@ -145,7 +185,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>client</receiver>
+   <receiver>client_registor</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -161,7 +201,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>client</receiver>
+   <receiver>client_registor</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

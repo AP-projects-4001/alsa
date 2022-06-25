@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(shope VERSION 0.1 LANGUAGES CXX)
+project(MENU_ VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -19,66 +19,55 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        client.h
-        client.cpp
-        client.ui
-        customer.h
-        customer.cpp
-        customer.ui
-        admin.h
-        admin.cpp
-        admin.ui
-        register.h
-        register.cpp
-        register.ui
-        forgetpassword.h
-        forgetpassword.cpp
-        forgetpassword.ui
-        customer_register.h
-        customer_register.cpp
-        customer_register.ui
-        increase_money.h
-        increase_money.cpp
-        increase_money.ui
-        how_much_money.h
-        how_much_money.cpp
-        how_much_money.ui
-        client_meno.cpp
-        client_meno.h
-        client_meno.ui
-        list_pruduct.h
-        list_pruduct.cpp
-        product_detail.cpp
-        product_detail.h
-        product_detail.ui
+        registor.cpp
+        registor.h
+        registor.ui
+        client_registor.h client_registor.cpp client_registor.ui
+        forget_pasword_customer.h forget_pasword_customer.cpp forget_pasword_customer.ui
+        forget_password_client.h forget_password_client.cpp forget_password_client.ui
+        client_meno.h client_meno.cpp client_meno.ui
+         list_pruduct.h list_pruduct.cpp
+         product_detail.cpp
+         product_detail.h
+         product_detail.ui
+        report_page.h report_page.cpp report_page.ui
+        add_product.cpp
+        add_product.h
+        add_product.ui
+        custumer_menu.cpp
+        custumer_menu.h
+        custumer_menu.ui
+        buylist.h
+        buylist.cpp
+        buylist.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(shope
+    qt_add_executable(MENU_
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET shope APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET MENU_ APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(shope SHARED
+        add_library(MENU_ SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(shope
+        add_executable(MENU_
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(shope PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(MENU_ PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-set_target_properties(shope PROPERTIES
+set_target_properties(MENU_ PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -87,5 +76,5 @@ set_target_properties(shope PROPERTIES
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(shope)
+    qt_finalize_executable(MENU_)
 endif()

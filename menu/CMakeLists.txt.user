@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-06-18T10:09:05. -->
+<!-- Written by QtCreator 7.0.1, 2022-06-25T18:05:18. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -296,9 +296,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">shope</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.shope</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">shope</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">MENU_</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.MENU_</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">MENU_</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

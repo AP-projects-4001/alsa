@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QFile>
 #include "product_detail.h"
+#include "report_page.h"
+#include "buylist.h"
 
 int list_pruduct::number = 0;
 
@@ -161,7 +163,7 @@ list_pruduct::list_pruduct(QWidget *parent) :
     connect(privious,&QPushButton::clicked,[this] { on_privious_button(); });
 
     buy_list = new QPushButton{"سبد خرید"};
-    //connect(privious,&QPushButton::clicked,[this] { on_privious_button(); });
+    connect(buy_list,&QPushButton::clicked,[this] { on_buy_list_button(); });
 
     page_number = new QLineEdit{"1"};
     page_number->setAlignment(Qt::AlignLeft);
@@ -184,21 +186,55 @@ list_pruduct::list_pruduct(QWidget *parent) :
 
 void list_pruduct::on_buy_button(QString id)
 {
-    /***********************************/
+    QFile inputFile("buylist.txt");
+    QStringList split;
+
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+
+       for (int i = 0; !in.atEnd(); i++)
+       {
+          QString line = in.readLine();
+          split = line.split(",");
+
+          if(split[1] == id)
+          {
+              QMessageBox::warning(this,"اخطار","این کالا قبلا به سبد خرید اضافه شده است!");
+              return;
+          }
+       }
+
+       inputFile.close();
+    }
+
+    QFile file("buylist.txt");
+    QTextStream stream( &file );
+
+    file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append);
+
+    stream << username << "," << id << "\n";
+    file.close();
+
+    QMessageBox::information(this,"تایید","با موفقیت به سبد خرید اضافه شد!");
 }
 
 void list_pruduct::on_detail_button(QString id)
 {
     Product_detail* temp = new Product_detail{this};
-    connect(this, SIGNAL(sendString(QString)), temp, SLOT(showString(QString)));
+    connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getId(QString)));
     temp->show();
 
-    emit sendString(id);
+    emit sendPruductId(id);
 }
 
 void list_pruduct::on_report_button(QString id)
 {
-    /*----------------------------------------*/
+    report_page* temp = new report_page{this};
+    connect(this, SIGNAL(sendId(QString,QString)), temp, SLOT(getId(QString,QString)));
+    temp->show();
+
+    emit sendId(username,id);
 }
 
 void list_pruduct::on_back_button()
@@ -238,6 +274,20 @@ void list_pruduct::on_privious_button()
 
     page_number->setText(QString::number(page_number->text().toInt()-1));
     show_list(page_number->text().toInt());
+}
+
+void list_pruduct::getUserName(QString str)
+{
+    username = str;
+}
+
+void list_pruduct::on_buy_list_button()
+{
+    buylist* temp = new buylist{this};
+    connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getId(QString)));
+    temp->show();
+    close();
+    emit sendPruductId(username);
 }
 
 int list_pruduct::countlines(QString fname)
