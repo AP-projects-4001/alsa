@@ -28,6 +28,7 @@ private:
      QVector<QString> card_numberVect;
      QVector<QString> CVV2_Vect;
      QVector<QString> money_Vect;
+     QVector<QString> Block_vect;
 };
 
 #endif // REGISTOR_H
