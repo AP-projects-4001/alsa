@@ -40,6 +40,9 @@ set(PROJECT_SOURCES
         buylist.h
         buylist.cpp
         buylist.ui
+        report_page.cpp
+        report_page.h
+        report_page.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
