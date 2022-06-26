@@ -4,11 +4,9 @@
 #include "client_registor.h"
 #include "forget_pasword_customer.h"
 #include "forget_password_client.h"
+#include "admin.h"
 #include <QFile>
 #include <QMessageBox>
-#include "client_meno.h"
-#include "custumer_menu.h"
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -65,6 +63,7 @@ void MainWindow::read_file(QString file_name){
                QString myText = in.readLine();
                QStringList List = myText.split(',');
                 Password_vect.push_back(List[1]);
+                block.push_back(List[5]);
        }
          myfile.close();
 }
@@ -88,16 +87,26 @@ void MainWindow::read_file(){
 void MainWindow::on_pushButton_4_clicked()
 {
     if(ui->lineEdit->text() == "admin" && ui->lineEdit_2->text() =="admin" ){
-        /***********************FORADDMIN***********************************/
+        Admin *d = new Admin(this);
+        d->show();
     }
     else if(ui->lineEdit->text() == "customer"){
         read_file("Login_customer.txt");
         bool isvalid = false;
-        for(int i = 0 ; i < Password_vect.size() ; i++){
+        int i = 0;
+        for(i ; i < Password_vect.size() ; i++){
             if(Password_vect[i] == ui->lineEdit_2->text()){
                 isvalid = true;
                 break;
             }
+        }
+        if(block[i]!="unblock"){
+            int ret;
+            QMessageBox msgBox;
+            msgBox.setText("دسترسی شما به سایت به علت بلاک بودن محدود شده است!!!");
+            ui->lineEdit->clear();
+            ui->lineEdit_2->clear();
+            ret = msgBox.exec();
         }
         if(!isvalid){
                int ret;
@@ -108,11 +117,7 @@ void MainWindow::on_pushButton_4_clicked()
                ret = msgBox.exec();
            }
            else{
-                custumer_menu* temp = new custumer_menu();
-                temp->show();
-                connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
-                emit sendUserName(ui->lineEdit->text());
-                close();
+            /*********************************************/
            }
     }
     else{
@@ -125,16 +130,15 @@ void MainWindow::on_pushButton_4_clicked()
                }
            }
            if(!isvalid){
-                  QMessageBox::warning(this,"اخطار","رمز یا نام کاربری اشتباه است!!!");
+                  int ret;
+                  QMessageBox msgBox;
+                  msgBox.setText("رمز یا نام کاربری اشتباه است!!!");
                   ui->lineEdit->clear();
                   ui->lineEdit_2->clear();
+                  ret = msgBox.exec();
               }
               else{
-               client_meno* temp = new client_meno();
-               temp->show();
-               connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
-               emit sendUserName(ui->lineEdit->text());
-               close();
+               /*********************************************/
               }
      }
 
