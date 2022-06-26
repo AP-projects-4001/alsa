@@ -1,13 +1,13 @@
 #ifndef FORGET_PASSWORD_CLIENT_H
 #define FORGET_PASSWORD_CLIENT_H
-
+#include "persongclientt.h"
 #include <QDialog>
 
 namespace Ui {
 class forget_password_client;
 }
 
-class forget_password_client : public QDialog
+class forget_password_client : public QDialog,public personGclientt
 {
     Q_OBJECT
 
@@ -20,18 +20,6 @@ private slots:
 
 private:
     Ui::forget_password_client *ui;
-private:
-
-    void Write_to_file();
-    void read_file();
-    QVector<QString> nameVect;
-    QVector<QString> password_vect;
-    QVector<QString> address_vect;
-    QVector<QString> phoneNumber;
-    QVector<QString> card_numberVect;
-    QVector<QString> CVV2_Vect;
-    QVector<QString> money_Vect;
-
 };
 
 #endif // FORGET_PASSWORD_CLIENT_H
