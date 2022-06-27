@@ -18,6 +18,7 @@ private slots:
     void on_buttonBox_accepted();
 private:
     Ui::client_registor *ui;
+    void final_regist();
 };
 
 #endif // CLIENT_REGISTOR_H

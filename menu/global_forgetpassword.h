@@ -5,9 +5,17 @@
 class global_forgetPassword
 {
 public:
-    global_forgetPassword();
+
+          global_forgetPassword();
+
 protected:
-   virtual void on_buttonBox_accepted()   =  0;
+
+           virtual void on_buttonBox_accepted()   =  0;
+
+             void chekVal(bool);
+
+              bool isvalid;
+
 };
 
 #endif // GLOBAL_FORGETPASSWORD_H

@@ -17,20 +17,14 @@ void forget_password_client::on_buttonBox_accepted()
 {
        read_file("Login_client.txt");
         int i=0;
-        bool isval = false;
          for(i ; i < Name.size() ; i++){
             if(Name[i] == ui->lineEdit->text()){
-                isval = true;
+                isvalid = true;
                 break;
             }
         }
-        if(!isval){
-            int ret;
-            QMessageBox msgBox;
-            msgBox.setText("این کاربر وجود ندارد !!!!!");
-            ret = msgBox.exec();
-        }
-        else{
+         chekVal(isvalid);
+        if(isvalid){
            Password.replace(i,ui->lineEdit_2->text());
            write_to_file("Login_client.txt");
         }

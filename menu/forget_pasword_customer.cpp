@@ -15,21 +15,15 @@ forget_pasword_customer::~forget_pasword_customer()
 void forget_pasword_customer::on_buttonBox_accepted()
 {
     Read_file();
-    bool isval = false;
     int i = 0;
     for(i  ; i < name.size() ; i++ ){
         if(ui->lineEdit->text() == name[i]){
-            isval = true;
+            isvalid = true;
             break;
         }
     }
-    if(!isval){
-        int ret;
-        QMessageBox msgBox;
-        msgBox.setText("این کاربر وجود ندارد !!!!!");
-         ret = msgBox.exec();
-    }
-    else{
+    chekVal(isvalid);
+    if(isvalid){
           password.replace(i,ui->lineEdit_2->text());
           Write_to_file();
        }

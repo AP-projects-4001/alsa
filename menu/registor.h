@@ -21,6 +21,7 @@ private slots:
 
 private:
     Ui::Registor *ui;
+    void final_regist();
 };
 
 #endif // REGISTOR_H
