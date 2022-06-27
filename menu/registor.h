@@ -1,13 +1,14 @@
 #ifndef REGISTOR_H
 #define REGISTOR_H
 #include"persong.h"
+#include"global_registor.h"
 #include <QDialog>
 
 namespace Ui {
 class Registor;
 }
 
-class Registor : public QDialog,public personG
+class Registor : public QDialog,public personG,public global_registor
 {
     Q_OBJECT
 

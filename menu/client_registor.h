@@ -2,11 +2,12 @@
 #define CLIENT_REGISTOR_H
 #include <QDialog>
 #include"persongclientt.h"
+#include"global_registor.h"
 namespace Ui {
 class client_registor;
 }
 
-class client_registor : public QDialog,public personGclientt
+class client_registor : public QDialog,public personGclientt,public global_registor
 {
     Q_OBJECT
 

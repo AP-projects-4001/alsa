@@ -7,7 +7,6 @@ class personG
 public:
         personG();
 protected:
-
     QVector<QString > name;
     QVector<QString > password;
     QVector<QString > card_number;

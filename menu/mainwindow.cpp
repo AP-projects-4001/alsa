@@ -85,7 +85,7 @@ void MainWindow::on_pushButton_4_clicked()
             return;
         }
            else{
-            /*********************************************/
+            /********************customer*************************/
            }
     }
     else{
