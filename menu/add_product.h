@@ -14,16 +14,25 @@ class Add_Product : public QDialog
 public:
     explicit Add_Product(QWidget *parent = nullptr);
     ~Add_Product();
-    static int countlines(QString filename);
+
+signals:
+    void sendUserName(QString);
 
 private slots:
-    void on_pushButton_clicked();
-    void on_buttonBox_accepted();
+    void on_pushButton_4_clicked();
     void getUserName(QString str);
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::Add_Product *ui;
-    QPixmap imagePixmap;
+    QString username;
 };
 
 #endif // ADD_PRODUCT_H

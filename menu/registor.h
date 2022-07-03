@@ -1,13 +1,14 @@
 #ifndef REGISTOR_H
 #define REGISTOR_H
-
+#include"persong.h"
+#include"global_registor.h"
 #include <QDialog>
 
 namespace Ui {
 class Registor;
 }
 
-class Registor : public QDialog
+class Registor : public QDialog,public personG,public global_registor
 {
     Q_OBJECT
 
@@ -20,15 +21,7 @@ private slots:
 
 private:
     Ui::Registor *ui;
-    void Write_to_file();
-    void read_file();
-private:
-     QVector<QString> nameVect;
-     QVector<QString> password_vect;
-     QVector<QString> card_numberVect;
-     QVector<QString> CVV2_Vect;
-     QVector<QString> money_Vect;
-     QVector<QString> Block_vect;
+    void final_regist();
 };
 
 #endif // REGISTOR_H

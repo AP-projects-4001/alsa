@@ -24,7 +24,7 @@ void Product_detail::on_pushButton_clicked()
 
 void Product_detail::getPruductId(QString str)
 {
-    QFile inputFile("pruduct.txt");
+    QFile inputFile("prudoct.txt");
     QStringList split;
 
     if (inputFile.open(QIODevice::ReadOnly))
@@ -36,7 +36,7 @@ void Product_detail::getPruductId(QString str)
           QString line = in.readLine();
           split = line.split(",");
 
-          if(split[8] == str)
+          if(split[11] == str)
              break;
        }
 

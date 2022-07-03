@@ -22,6 +22,8 @@ private slots:
     void on_pushButton_2_clicked();
     void getUserName(QString str);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::custumer_menu *ui;
     QString username;

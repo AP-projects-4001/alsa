@@ -2,6 +2,7 @@
 #include "ui_custumer_menu.h"
 #include "add_product.h"
 #include <QMessageBox>
+#include "list_pruduct.h"
 
 custumer_menu::custumer_menu(QWidget *parent) :
     QDialog(parent),
@@ -29,5 +30,15 @@ void custumer_menu::getUserName(QString str)
     username = str;
     ui->setupUi(this);
     setWindowTitle("صفحه فروشنده");
+}
+
+
+void custumer_menu::on_pushButton_clicked()
+{
+    list_pruduct* temp = new list_pruduct{this};
+    connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
+
+    temp->show();
+    emit sendUserName(username);
 }
 

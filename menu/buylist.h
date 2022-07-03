@@ -24,20 +24,32 @@ public:
     explicit buylist(QWidget *parent = nullptr);
     ~buylist();
 
+signals:
+    void sendPruductId(QString id);
+    void add_item(QString,QString);
+    void send(QString);
+
 private slots:
-    void on_pushButton_clicked();
-    void getId(QString str);
+    void getsId(QString str);
     void spin_count_changed(int value);
     void on_remove_button_clicked(QString id);
-    void on_pushButton_2_clicked();
     void show_list();
-
+    void on_detail_button(QString id);
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
     void on_pushButton_4_clicked();
 
 private:
-    Ui::buylist *ui;
-    QGroupBox* createGroup(QString pruduct_id);
+    int count_calculate(QString id);
+    int Chek;
     QString username;
+
+    QGroupBox* createGroup(QString pruduct_id);
+
+    Ui::buylist *ui;
+
+    QVBoxLayout* lay;
+    QSpacerItem* Spacer;
     QVector<QPushButton*> buttons;
     QVector<QLabel*> labels;
     QVector<QLineEdit*> lineedits;
@@ -46,16 +58,6 @@ private:
     QVector<QGroupBox*> groups;
     QVector<QSpinBox*> spins;
     QVector<QSpacerItem*> spaces;
-
-    QSpacerItem* vSpacer;
-
-    QSpacerItem* verticalSpacer;
-    QPushButton* remove;
-    QPushButton* detail;
-    QLabel* name;
-    QLineEdit* price;
-    QSpinBox* count;
-    QHBoxLayout* lay;
 };
 
 #endif // BUYLIST_H

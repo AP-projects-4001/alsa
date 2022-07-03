@@ -1,13 +1,13 @@
 #ifndef CLIENT_REGISTOR_H
 #define CLIENT_REGISTOR_H
-
 #include <QDialog>
-
+#include"persongclientt.h"
+#include"global_registor.h"
 namespace Ui {
 class client_registor;
 }
 
-class client_registor : public QDialog
+class client_registor : public QDialog,public personGclientt,public global_registor
 {
     Q_OBJECT
 
@@ -16,19 +16,9 @@ public:
     ~client_registor();
 private slots:
     void on_buttonBox_accepted();
-
-private:
-    void Write_to_file();
-    void read_file();
-    QVector<QString> nameVect;
-    QVector<QString> password_vect;
-    QVector<QString> address_vect;
-    QVector<QString> phoneNumber;
-    QVector<QString> card_numberVect;
-    QVector<QString> CVV2_Vect;
-    QVector<QString> money_Vect;
 private:
     Ui::client_registor *ui;
+    void final_regist();
 };
 
 #endif // CLIENT_REGISTOR_H

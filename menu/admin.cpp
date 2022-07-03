@@ -18,4 +18,3 @@ void Admin::on_pushButton_clicked()
     block_user *d = new block_user(this);
     d->show();
 }
-
