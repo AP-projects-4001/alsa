@@ -44,6 +44,9 @@ private:
     QVector<QString> client_name_remove;
     QVector<QString> price_remove;
     QVector<QString> counter_remove;
+    QVector<QString> id_remove;
+    QVector<QString> id;
+
     bool check_buy = false;
     void set();
     void increas();

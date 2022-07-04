@@ -35,6 +35,7 @@ void increase_money::Read_file_buylist(){
             client_name.push_back(List[1]);
             price.push_back(List[2]);
             counter.push_back(List[3]);
+            id.push_back(List[4]);
          }
          myfile.close();
 }
@@ -91,7 +92,8 @@ void increase_money::Write_to_file_remove(){
         out << customer_name_remove[i]<<','
         <<client_name_remove[i]<<','
         <<price_remove[i]<<','
-        <<counter_remove[i]
+        <<counter_remove[i]<<','
+        <<id_remove[i]
         <<Qt::endl;
         i++;
     }
@@ -176,6 +178,7 @@ void increase_money::increas_money_of_customer()
                  client_name_remove.push_back(client_name[i]);
                  price_remove.push_back(price[i]);
                  counter_remove.push_back(counter[i]);
+                 id_remove.push_back(id[i]);
              }
          }
          Write_to_file();

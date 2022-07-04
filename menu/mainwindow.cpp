@@ -54,7 +54,8 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_4_clicked()
 {
     if(ui->lineEdit->text() == "admin" && ui->lineEdit_2->text() =="admin" ){
-        Admin *d = new Admin(this);
+        Admin *d = new Admin;
+        close();
         d->show();
     }
     else if(ui->lineEdit->text() == "customer"){

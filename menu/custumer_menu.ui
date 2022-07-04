@@ -31,7 +31,7 @@
    <item>
     <widget class="QPushButton" name="pushButton_3">
      <property name="text">
-      <string>PushButton</string>
+      <string>تاریخچه خرید ها</string>
      </property>
     </widget>
    </item>

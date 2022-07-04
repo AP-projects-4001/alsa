@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QFile>
 #include "buylist.h"
+#include "history.h"
+#include "increase_funds.h"
 
 client_meno::client_meno(QWidget *parent) :
     QDialog(parent),
@@ -49,8 +51,8 @@ void client_meno::on_pushButton_clicked()
 
 void client_meno::on_pushButton_4_clicked()
 {
-    QMessageBox::information(this,"a",username);
-    close();
+    Increase_funds* temp = new Increase_funds{this};
+    temp->show();
 }
 
 void client_meno::getUserName(QString str)
@@ -97,13 +99,16 @@ void client_meno::on_pushButton_3_clicked()
 
 void client_meno::on_pushButton_2_clicked()
 {
-    /*-----------------------------------*/
+    history* temp = new history{this};
+    connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getsId(QString)));
+    temp->show();
+    emit sendPruductId(username);
 }
 
 
 void client_meno::on_exit_clicked()
 {
-        QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
-        close();
+    QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
+    close();
 }
 

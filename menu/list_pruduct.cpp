@@ -459,7 +459,7 @@ void list_pruduct::combo_changed(int index)
 void list_pruduct::search_changed(QString str)
 {
     QString cat = categorate->currentText()[0];
-    read(type,str,0,1000000000000,2,"all","all","all",cat);
+    read(type,str,0,1000000000000,2,"All","All","All",cat);
 
     if(lines.length() == 0)
     {

@@ -24,7 +24,7 @@
    <item>
     <widget class="QPushButton" name="pushButton_4">
      <property name="text">
-      <string>کیف پول</string>
+      <string>افزایش موجودی</string>
      </property>
     </widget>
    </item>

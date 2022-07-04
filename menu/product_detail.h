@@ -19,6 +19,8 @@ private slots:
     void on_pushButton_clicked();
     void getPruductId(QString str);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Product_detail *ui;
     QString id;

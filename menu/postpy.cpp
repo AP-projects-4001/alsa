@@ -3,6 +3,8 @@
 #include "getloc_by_py.h"
 #include "increase_money.h"
 #include <QMessageBox>
+#include "jadval.h"
+
 PostPy::PostPy(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PostPy)
@@ -25,10 +27,8 @@ void PostPy::on_pushButton_2_clicked()
 
 void PostPy::on_pushButton_clicked()
 {
-    int ret;
-    QMessageBox msgBox;
-    msgBox.setText("برای مشاهده  مراکز استان ها برای تحویل حضوری کالا خود  به فایل  علی مراجعه کنید !!!!!");
-    ret = msgBox.exec();
+    jadval* temp = new jadval{this};
+    temp->show();
     close();
 }
 
