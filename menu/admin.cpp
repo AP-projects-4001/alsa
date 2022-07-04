@@ -59,4 +59,3 @@ void Admin::on_pushButton_8_clicked()
     QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
     close();
 }
-

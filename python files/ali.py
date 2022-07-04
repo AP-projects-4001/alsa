@@ -3,9 +3,20 @@ import pandas as pd;
 from sklearn.linear_model import LinearRegression;
 from geopy.geocoders import Nominatim
 #********************GET LAT AND LONG*********************#
-myState = input("what's your State ? ")
+file1 = open('PostPy.txt', 'r')
+Lines = file1.readlines()
+l="";
+l2 = "";
+f = 0;
+for i in Lines:
+    if f==0:
+      l = i[:-1];
+    else:
+        l2 = i;  
+    f+=1;    
+myState = l;
 geolocator = Nominatim(user_agent="MyApp");
-loc = input("Where to send the product :  ");
+loc = l2;
 location_company = geolocator.geocode(myState);  
 location = geolocator.geocode(loc);
 lat = location.latitude;
@@ -95,7 +106,8 @@ Reg = LinearRegression();
 all = df4.drop(['price'],axis='columns');
 P = df4.price;
 Reg.fit(all,P);
-print(Reg.predict
+x2 = 0
+x2 =(Reg.predict
 ([[dist,mylist[0],mylist[1],mylist[2],mylist[3],mylist[4]
 ,mylist[5],mylist[6],mylist[7],mylist[8],mylist[9],mylist[10]
 ,mylist[11],mylist[12],mylist[13],mylist[14],mylist[15],mylist[16]
@@ -103,3 +115,6 @@ print(Reg.predict
 ,mylist[23],mylist[24],mylist[25],mylist[26],mylist[27],mylist[28]
 ,mylist[29],mylist[30],mylist[31]
 ]]))
+f = open("PostPy.txt", "w")
+f.write(str(x2)[1:-1])
+f.close()

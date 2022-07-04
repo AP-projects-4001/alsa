@@ -77,6 +77,7 @@ void MainWindow::on_pushButton_4_clicked()
             ret = msgBox.exec();
             return;
         }
+        
         if(Block[i]!="unblock"){
             int ret;
             QMessageBox msgBox;

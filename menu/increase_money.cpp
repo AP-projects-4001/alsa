@@ -156,7 +156,6 @@ void increase_money::increas_money_of_customer()
 {
     if(check_buy){
          Read_file_buylist();
-         read_file("Login_client.txt");
          Read_file_history();
          Read_file();
 
