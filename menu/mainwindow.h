@@ -32,7 +32,10 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_7_clicked();
+
 private:
+    int flag{0};
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

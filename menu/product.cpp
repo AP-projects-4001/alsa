@@ -26,3 +26,16 @@ int product::countlines(QString fname)
     file.close();
     return line_count;
 }
+
+int product::photo_name()
+{
+    QDir directory("./prudoct_picture/");
+    QStringList images = directory.entryList(QStringList() << "*.png" ,QDir::Files);
+    QString filename;
+
+    foreach(filename, images) {}
+
+    filename = filename.split(".")[0];
+
+    return (filename.toInt() + 1);
+}

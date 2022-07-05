@@ -5,6 +5,8 @@
 #include"chenge_information.h"
 #include"delete_user.h"
 #include <QMessageBox>
+#include "list_pruduct.h"
+#include <QFile>
 
 Admin::Admin(QWidget *parent) :
     QDialog(parent),
@@ -47,15 +49,44 @@ void Admin::on_pushButton_4_clicked()
 
 void Admin::on_pushButton_5_clicked()
 {
+    QFile file("history.txt");
+    int line_count = 0;
+    QString line;
+    QTextStream in(&file);
+
+    file.open(QIODevice::ReadWrite);
+
+    while( !in.atEnd())
+    {
+        line=in.readLine();
+        line_count++;
+    }
+
+    file.close();
+
+    if(line_count == 0)
+    {
+        QMessageBox::warning(this,"اخطار","تاریخچه تراکنش ها خالی است");
+        return;
+    }
+
     history* temp = new history();
     temp->show();
     connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getsId(QString)));
     emit sendUserName("admin");
 }
 
-
 void Admin::on_pushButton_8_clicked()
 {
     QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
     close();
 }
+void Admin::on_pushButton_6_clicked()
+{
+    list_pruduct* temp = new list_pruduct{this};
+    connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
+
+    temp->show();
+    emit sendUserName("admin");
+}
+

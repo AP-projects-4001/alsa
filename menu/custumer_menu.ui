@@ -35,6 +35,13 @@
      </property>
     </widget>
    </item>
+   <item>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>خروج</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

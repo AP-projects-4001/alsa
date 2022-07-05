@@ -31,27 +31,7 @@ void Add_Product::on_pushButton_4_clicked()
 
 void Add_Product::getUserName(QString str)
 {
-    QFile file("Login_customer.txt");
-
-    QString temp;
-    QTextStream out(&file);
-    QStringList split;
-
-    if(file.open(QFile::ReadOnly | QFile::Text))
-    {
-        while (true)
-        {
-            temp = out.readLine();
-            split = temp.split(",");
-            if(str == split[1])
-            {
-                username = split[0];
-                break;
-            }
-        }
-    }
-
-    file.close();
+    username = str;
 }
 
 void Add_Product::on_pushButton_5_clicked()

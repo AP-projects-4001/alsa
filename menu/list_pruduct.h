@@ -26,7 +26,10 @@ signals:
 private slots:
     void on_buy_button(QString id);
     void on_detail_button(QString id);
+    void get_end(QString);
     void on_report_button(QString id);
+    void on_remove_button(QString id);
+    void on_edit_button(QString id);
     void on_back_button();
     void on_next_button();
     void on_privious_button();
@@ -43,7 +46,7 @@ private:
     int comboindex{0};
 
     void sort(QString typr);
-
+    void creat_button_lay(QVBoxLayout *, QString id);
     QGroupBox* createGroup(int index);
     QGroupBox* createEmptyGroup();
 
@@ -78,6 +81,8 @@ private:
     QPushButton* buy;
     QPushButton* detail;
     QPushButton* report;
+    QPushButton* remove;
+    QPushButton* edit;
     QPushButton* back;
     QPushButton* next;
     QPushButton* buy_list;

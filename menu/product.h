@@ -20,8 +20,7 @@ protected:
     static int countlines(QString filename);
 
     virtual void on_pushButton_clicked() = 0;
-    //virtual void on_pushButton_2_clicked() = 0;
-    //virtual void on_pushButton_3_clicked() = 0;
+    int photo_name();
 };
 
 #endif // PRODUCT_H

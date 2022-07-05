@@ -171,12 +171,12 @@
      <rect>
       <x>60</x>
       <y>30</y>
-      <width>301</width>
+      <width>371</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>نکته* = اگر ادمین هستید نیاز به ثبت نام ندارید </string>
+     <string>نکته* = اگر ادمین هستید با تصویر نیز می توانید وارد شوید</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
@@ -190,6 +190,19 @@
     </property>
     <property name="text">
      <string>بازیابی رمز مشتری</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>91</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ورود تصویری</string>
     </property>
    </widget>
   </widget>

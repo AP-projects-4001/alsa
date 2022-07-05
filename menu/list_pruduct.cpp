@@ -6,11 +6,16 @@
 #include "report_page.h"
 #include "buylist.h"
 #include "advanced_search.h"
+#include "edit_product.h"
 
 int list_pruduct::number = 0;
 
 QGroupBox* list_pruduct::createGroup(int index)
 {
+    setMaximumHeight(700);
+    setFixedHeight(700);
+    setMinimumHeight(700);
+
     QStringList split = lines[index].split(",");
 
     QGroupBox *groupBox = new QGroupBox(split[1]);
@@ -35,7 +40,7 @@ QGroupBox* list_pruduct::createGroup(int index)
 
     long long fprice = split[2].toLongLong() * (100 - split[5].toInt());
 
-    QLineEdit* price = new QLineEdit(split[1]);
+    QLineEdit* price = new QLineEdit(split[2]);
     price->setDisabled(true);
     lineedits.push_back(price);
 
@@ -59,18 +64,6 @@ QGroupBox* list_pruduct::createGroup(int index)
 
     QString id = split[11];
 
-    buy = new QPushButton{"افزودن به سبد خرید"};
-    connect(buy,&QPushButton::clicked,[this, id] { on_buy_button(id); });
-    buttons.push_back(buy);
-
-    detail = new QPushButton{"جزئیات محصول"};
-    connect(detail,&QPushButton::clicked,[this, id] { on_detail_button(id); });
-    buttons.push_back(detail);
-
-    report = new QPushButton{"گزارش تخلف"};
-    connect(report,&QPushButton::clicked,[this, id] { on_report_button(id); });
-    buttons.push_back(report);
-
     price->setMaximumWidth(60);
     price->setFixedWidth(60);
     price->setAlignment(Qt::AlignCenter);
@@ -82,9 +75,7 @@ QGroupBox* list_pruduct::createGroup(int index)
     discount->setAlignment(Qt::AlignCenter);
     discount->setStyleSheet("QLabel { background-color : red; color : white; font-size:20px;}");
 
-    button_layout->addWidget(buy);
-    button_layout->addWidget(detail);
-    button_layout->addWidget(report);
+    creat_button_lay(button_layout,id);
 
     price_layout->addWidget(price);
     price_layout->addWidget(discount);
@@ -106,6 +97,10 @@ QGroupBox* list_pruduct::createGroup(int index)
 QGroupBox *list_pruduct::createEmptyGroup()
 {
     QGroupBox *groupBox = new QGroupBox{" "};
+    setMaximumHeight(700);
+    setFixedHeight(700);
+    setMinimumHeight(700);
+
     groups.push_back(groupBox);
 
     return groupBox;
@@ -155,7 +150,7 @@ void list_pruduct::read(QString cust_name, QString name, long long min, long lon
               if(cust_name != split[0])
                   continue;
 
-          if(name != "all")
+          if(name != "All")
               if(!split[1].contains(name))
                    continue;
 
@@ -201,9 +196,10 @@ void list_pruduct::read(QString cust_name, QString name, long long min, long lon
 
 list_pruduct::list_pruduct(QWidget *parent) :
     QDialog(parent)
-{        
+{
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
+
     setWindowTitle(tr("لیست محصولات"));
-    setMaximumSize(300,300);
 
     grid = new QGridLayout{this};
 
@@ -232,6 +228,8 @@ list_pruduct::list_pruduct(QWidget *parent) :
     search = new QLineEdit;
     search->setPlaceholderText("search");
     connect(search,SIGNAL(textChanged(const QString &)),this,SLOT(search_changed(QString)));
+    search->setMaximumWidth(180);
+    search->setFixedWidth(180);
 
     categorate = new QComboBox();
     categorate->addItem("All");
@@ -246,25 +244,42 @@ list_pruduct::list_pruduct(QWidget *parent) :
 
     numbers = new QLabel;
 
-    search_lay->addWidget(categorate);
-    search_lay->addWidget(search);
+//    search_lay->addWidget(categorate);
+//    search_lay->addWidget(search);
 
-    space = new QSpacerItem(30, 0);
-    page_lay->addSpacerItem(space);
-    page_lay->addWidget(privious);
-    page_lay->addWidget(page_number);
-    page_lay->addWidget(numbers);
-    page_lay->addWidget(next);
-    page_lay->addSpacerItem(space);
-    setMaximumWidth(1001);
+//    space = new QSpacerItem(30, 0);
+//    page_lay->addSpacerItem(space);
+//    page_lay->addWidget(privious);
+//    page_lay->addWidget(page_number);
+//    page_lay->addWidget(numbers);
+//    page_lay->addWidget(next);
+//    page_lay->addSpacerItem(space);
+//    setMaximumWidth(1001);
+
+//    button_lay->addWidget(advance_search);
+//    button_lay->addWidget(buy_list);
+//    button_lay->addWidget(back);
+
+//    grid->addLayout(search_lay, 4, 0, 1, 1);
+//    grid->addLayout(page_lay, 4, 1, 1, 1);
+//    grid->addLayout(button_lay, 4, 2, 1, 1);
+
+    button_lay->addWidget(categorate);
+    button_lay->addWidget(search);
+
+    space = new QSpacerItem(50, 0);
+    button_lay->addSpacerItem(space);
+    button_lay->addWidget(privious);
+    button_lay->addWidget(page_number);
+    button_lay->addWidget(numbers);
+    button_lay->addWidget(next);
+    button_lay->addSpacerItem(space);
 
     button_lay->addWidget(advance_search);
     button_lay->addWidget(buy_list);
     button_lay->addWidget(back);
 
-    grid->addLayout(search_lay, 4, 0, 1, 1);
-    grid->addLayout(page_lay, 4, 1, 1, 1);
-    grid->addLayout(button_lay, 4, 2, 1, 1);
+    grid->addLayout(button_lay, 4, 0, 1, 3);
 
     setLayout(grid);
 }
@@ -333,6 +348,12 @@ void list_pruduct::on_detail_button(QString id)
     emit sendPruductId(id);
 }
 
+void list_pruduct::get_end(QString)
+{
+    read(type,"All",0,1000000000000,2,"All","All","All","A");
+    show_list(1);
+}
+
 void list_pruduct::on_report_button(QString id)
 {
     report_page* temp = new report_page{this};
@@ -340,6 +361,70 @@ void list_pruduct::on_report_button(QString id)
     temp->show();
 
     emit sendId(username,id);
+}
+
+void list_pruduct::on_remove_button(QString id)
+{
+    QMessageBox::StandardButton question;
+
+    question = QMessageBox::question(this, "توجه", "آیا میخواهید این کالا را حذف کنید؟",
+                                  QMessageBox::Yes|QMessageBox::No);
+
+    if (question == QMessageBox::No)
+        return;
+
+    QVector<QString> lines;
+    QFile inputFile("prudoct.txt");
+    QStringList split;
+    QString line;
+
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+
+       for (int i = 0; ; i++)
+       {
+          line = in.readLine();
+          split = line.split(",");
+
+          if(line == "")
+              break;
+
+          if(split[11] == id)
+              continue;
+
+          lines.push_back(line);
+       }
+
+       inputFile.close();
+    }
+
+    QFile file("prudoct.txt");
+    file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+    QTextStream stream( &file );
+    for(int i = 0; i < lines.length(); i++)
+        stream << lines.at(i) << "\n";
+
+    file.close();
+    lines.clear();
+
+    QFile photo("./prudoct_picture/" + id + ".png");
+    photo.remove();
+
+    read(type,"All",0,1000000000000,2,"All","All","All","A");
+    show_list(1);
+}
+
+void list_pruduct::on_edit_button(QString id)
+{
+    Edit_product* temp = new Edit_product{this};
+
+    connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getPruductId(QString)));
+    connect(temp, SIGNAL(show_end(QString)), this, SLOT(get_end(QString)));
+
+    temp->show();
+
+    emit sendPruductId(id);
 }
 
 void list_pruduct::on_back_button()
@@ -378,6 +463,9 @@ void list_pruduct::getUserName(QString str)
     if(username == "admin")
         type = username;
 
+    else
+        type = "client";
+
     QFile myfile("Login_customer.txt");
     if(!myfile.open(QFile::ReadOnly |QFile::Text))
     {
@@ -389,18 +477,17 @@ void list_pruduct::getUserName(QString str)
     {
         QString myText = in.readLine();
         QStringList List = myText.split(',');
-        if(username == List[1])
+
+        if(username == List[0])
         {
-            username = List[0];
             type = List[0];
-            return;
+            break;
         }
     }
 
     myfile.close();
-    type = "client";
 
-    read(type,"all",0,1000000000000,2,"All","All","All","A");
+    read(type,"All",0,1000000000000,2,"All","All","All","A");
     show_list(1);
 }
 
@@ -442,7 +529,7 @@ void list_pruduct::on_buy_list_button()
 void list_pruduct::combo_changed(int index)
 {
     QString cat = categorate->currentText()[0];
-    read(type,"all",0,1000000000000,2,"all","all","all",cat);
+    read(type,"All",0,1000000000000,2,"All","All","All",cat);
 
     if(lines.length() == 0)
     {
@@ -508,6 +595,43 @@ void list_pruduct::sort(QString type)
             if(split[6].toInt() >= split1[6].toInt())
                  lines.swapItemsAt(i,j);
         }
+    }
+}
+
+void list_pruduct::creat_button_lay(QVBoxLayout *button_layout,QString id)
+{
+    detail = new QPushButton{"جزئیات محصول"};
+    connect(detail,&QPushButton::clicked,[this, id] { on_detail_button(id); });
+    buttons.push_back(detail);
+
+    if(type == "client")
+    {
+        buy = new QPushButton{"افزودن به سبد خرید"};
+        connect(buy,&QPushButton::clicked,[this, id] { on_buy_button(id); });
+        buttons.push_back(buy);
+
+        report = new QPushButton{"گزارش تخلف"};
+        connect(report,&QPushButton::clicked,[this, id] { on_report_button(id); });
+        buttons.push_back(report);
+
+        button_layout->addWidget(buy);
+        button_layout->addWidget(detail);
+        button_layout->addWidget(report);
+    }
+
+    else
+    {
+        remove = new QPushButton{"حذف کالا"};
+        connect(remove,&QPushButton::clicked,[this, id] { on_remove_button(id); });
+        buttons.push_back(remove);
+
+        edit = new QPushButton{"ویرایش کالا"};
+        connect(edit,&QPushButton::clicked,[this, id] { on_edit_button(id); });
+        buttons.push_back(edit);
+
+        button_layout->addWidget(edit);
+        button_layout->addWidget(detail);
+        button_layout->addWidget(remove);
     }
 }
 

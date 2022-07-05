@@ -28,7 +28,7 @@ getLoc_by_py::~getLoc_by_py()
 void getLoc_by_py::on_buttonBox_accepted()
 {
      Write_to_file();
-     QString path = ".";
+     QString path = "C:/Users/TS/Desktop/ap/alsa/build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug";
      QString  command("python");
       QStringList params = QStringList() << "ali.py";
       QProcess *process = new QProcess();

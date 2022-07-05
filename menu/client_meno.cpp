@@ -99,16 +99,41 @@ void client_meno::on_pushButton_3_clicked()
 
 void client_meno::on_pushButton_2_clicked()
 {
+    QFile file("history.txt");
+    int line_count = 0;
+    QString line;
+    QTextStream in(&file);
+
+    file.open(QIODevice::ReadWrite);
+
+    while( !in.atEnd())
+    {
+        line=in.readLine();
+
+        QStringList split = line.split(",");
+
+        if(split[0] == username || split[1] == username)
+        {
+            line_count++;
+        }
+    }
+
+    file.close();
+
+    if(line_count == 0)
+    {
+        QMessageBox::warning(this,"اخطار","تاریخچه تراکنش ها خالی است");
+        return;
+    }
+
     history* temp = new history{this};
     connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getsId(QString)));
     temp->show();
     emit sendPruductId(username);
 }
 
-
 void client_meno::on_exit_clicked()
 {
     QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
     close();
 }
-

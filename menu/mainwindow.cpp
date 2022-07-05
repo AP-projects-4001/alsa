@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include "custumer_menu.h"
 #include "client_meno.h"
+#include<QProcess>
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent)
@@ -122,5 +123,29 @@ void MainWindow::on_pushButton_4_clicked()
         }
     }
 
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    QProcess *process = new QProcess();
+    flag += 1;
+
+    if(flag == 1)
+    {
+        QString path = "C:/Users/TS/Desktop/ap/alsa/build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug";
+        QString  command("python");
+        QStringList params = QStringList() << "picture.py";
+        process->startDetached(command, params, path);
+        process->waitForFinished();
+        process->close();
+    }
+
+    else
+    {
+        Admin *d = new Admin;
+        close();
+        d->show();
+    }
 }
 

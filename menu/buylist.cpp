@@ -85,7 +85,7 @@ QGroupBox *buylist::createGroup(QString pruduct_id)
        inputFile.close();
     }
 
-    QGroupBox *groupBox = new QGroupBox(split[0]);
+    QGroupBox *groupBox = new QGroupBox(split[1]);
     groups.push_back(groupBox);
 
     QHBoxLayout* main_layout = new QHBoxLayout();

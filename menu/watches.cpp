@@ -37,7 +37,7 @@ void watches::on_pushButton_3_clicked()
 
     QDir dir;
     dir.mkdir(QString(".\\prudoct_picture"));
-    imagePixmap.save(QString(".\\prudoct_picture\\") + QString::number(countlines(filename)+1) + ".png");
+    imagePixmap.save(QString(".\\prudoct_picture\\") + QString::number(photo_name()) + ".png");
 
     QFile file(filename);
     file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append);
@@ -61,7 +61,7 @@ void watches::on_pushButton_3_clicked()
 
     stream << username << "," << temp.name << "," << temp.price << "," << temp.count << ","
            << temp.coloer << ",0,1,0," << temp.brand << "," << temp.type << "," << temp.otherDetail << ","
-           << countlines(filename)+1 << ",w\n";
+           << QString::number(photo_name()-1) << ",w\n";
 
     file.close();
     close();

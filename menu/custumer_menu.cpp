@@ -5,6 +5,7 @@
 #include "list_pruduct.h"
 #include "history.h"
 #include <QFile>
+#include <QDir>
 
 custumer_menu::custumer_menu(QWidget *parent) :
     QDialog(parent),
@@ -19,7 +20,7 @@ custumer_menu::~custumer_menu()
 }
 
 void custumer_menu::on_pushButton_2_clicked()
-{
+{    
     Add_Product* temp = new Add_Product{this};
     connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
 
@@ -60,12 +61,44 @@ void custumer_menu::on_pushButton_clicked()
     emit sendUserName(username);
 }
 
-
 void custumer_menu::on_pushButton_3_clicked()
 {
+    QFile file("history.txt");
+    int line_count = 0;
+    QString line;
+    QTextStream in(&file);
+
+    file.open(QIODevice::ReadWrite);
+
+    while( !in.atEnd())
+    {
+        line=in.readLine();
+
+        QStringList split = line.split(",");
+
+        if(split[0] == username || split[1] == username)
+        {
+            line_count++;
+        }
+    }
+
+    file.close();
+
+    if(line_count == 0)
+    {
+        QMessageBox::warning(this,"اخطار","تاریخچه تراکنش ها خالی است");
+        return;
+    }
+
     history* temp = new history{this};
     connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getsId(QString)));
     temp->show();
     emit sendUserName(username);
+}
+
+void custumer_menu::on_pushButton_4_clicked()
+{
+    QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
+    close();
 }
 
