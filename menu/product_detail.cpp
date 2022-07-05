@@ -94,7 +94,7 @@ void Product_detail::getPruductId(QString str)
 
 void Product_detail::on_pushButton_2_clicked()
 {
-    QFile file("sound.txt");
+    QFile file("C:/Users/digitall home/Documents/Ap/alsa/python files/sound.txt");
 
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
@@ -108,10 +108,9 @@ void Product_detail::on_pushButton_2_clicked()
 
     /***********************/
 
-    QString path = "C:/Users/TS/Desktop/ap/alsa/build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug";
+    QString path = "C:/Users/digitall home/Documents/Ap/alsa/python files";
     QString  command("python");
     QStringList params = QStringList() << "sound.py";
-
     QProcess *process = new QProcess();
     process->startDetached(command, params, path);
     process->waitForFinished();

@@ -331,7 +331,7 @@ void buylist::on_pushButton_4_clicked()
     }
     else
      {
-          QFile myfile("PostPy.txt");
+          QFile myfile("C:/Users/digitall home/Documents/Ap/alsa/python files/PostPy.txt");
           if(!myfile.open(QFile::ReadOnly |QFile::Text))
           {
                  qDebug() << " Could not open the file for reading";
@@ -346,7 +346,10 @@ void buylist::on_pushButton_4_clicked()
           d->show();
           if(dis!=""){
               int n = dis.toFloat();
+               qDebug() << " n = "<<n<<Qt::endl;
+
               int m = ui->lineEdit_2->text().toInt();
+              qDebug() << " m= "<<m<<Qt::endl;
               int num = n+m;
               QString Q = QString::number(num);
               connect(this,SIGNAL(add_item(QString,QString)),d,SLOT(add_item(QString,QString)));

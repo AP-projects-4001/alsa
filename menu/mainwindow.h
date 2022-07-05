@@ -35,7 +35,7 @@ private slots:
     void on_pushButton_7_clicked();
 
 private:
-    int flag{0};
+    bool checker = false;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

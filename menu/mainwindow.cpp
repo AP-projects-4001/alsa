@@ -129,13 +129,13 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushButton_7_clicked()
 {
     QProcess *process = new QProcess();
-    flag += 1;
 
-    if(flag == 1)
+    if(!checker)
     {
-        QString path = "C:/Users/TS/Desktop/ap/alsa/build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug";
+        checker = true;
+        QString path = "C:/Users/digitall home/Documents/Ap/alsa/python files";
         QString  command("python");
-        QStringList params = QStringList() << "picture.py";
+        QStringList params = QStringList() << "face_encoding.py";
         process->startDetached(command, params, path);
         process->waitForFinished();
         process->close();
@@ -143,9 +143,16 @@ void MainWindow::on_pushButton_7_clicked()
 
     else
     {
-        Admin *d = new Admin;
-        close();
-        d->show();
-    }
+        checker = false;
+        if(QFile::exists("C:/Users/digitall home/Documents/Ap/alsa/python files/face_encoding.py"))
+        {
+            Admin *d = new Admin;
+            d->show();
+            QFile file ("C:/Users/digitall home/Documents/Ap/alsa/python files/face_regression.txt");
+            file.remove();
+
+         }
+  }
 }
+
 

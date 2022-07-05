@@ -41,7 +41,7 @@ private slots:
 
 private:
     int count_calculate(QString id);
-    int Chek;
+    int Chek = 0;
     QString username;
 
     QGroupBox* createGroup(QString pruduct_id);

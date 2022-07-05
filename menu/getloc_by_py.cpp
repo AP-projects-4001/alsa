@@ -9,7 +9,7 @@ getLoc_by_py::getLoc_by_py(QWidget *parent) :
     ui->setupUi(this);
 }
 void getLoc_by_py::Write_to_file(){
-    QFile file("Postpy.txt");
+    QFile file("C:/Users/digitall home/Documents/Ap/alsa/python files/PostPy.txt");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
       qDebug() << " Could not open file for writing";
@@ -28,7 +28,7 @@ getLoc_by_py::~getLoc_by_py()
 void getLoc_by_py::on_buttonBox_accepted()
 {
      Write_to_file();
-     QString path = "C:/Users/TS/Desktop/ap/alsa/build-menu-Desktop_Qt_6_2_4_MinGW_64_bit-Debug";
+     QString path = "C:/Users/digitall home/Documents/Ap/alsa/python files";
      QString  command("python");
       QStringList params = QStringList() << "ali.py";
       QProcess *process = new QProcess();
