@@ -48,7 +48,6 @@ private:
     QVector<QString> id;
 
     bool check_buy = false;
-    void set();
     void increas();
 };
 

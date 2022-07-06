@@ -7,32 +7,41 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>350</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>400</width>
-    <height>350</height>
+    <height>300</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>400</width>
-    <height>350</height>
+    <height>300</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/chenge_cus.png);
+</string>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>-80</x>
-     <y>300</y>
+     <x>-70</x>
+     <y>250</y>
      <width>341</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(0, 85, 0);
+color: rgb(170, 0, 0);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -44,24 +53,36 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>90</y>
-     <width>63</width>
+     <x>200</x>
+     <y>70</y>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 0, 0);
+color: rgb(0, 0, 0);
+</string>
+   </property>
    <property name="text">
-    <string>نام کاربری</string>
+    <string>     نام کاربری</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>150</y>
+     <x>200</x>
+     <y>10</y>
      <width>111</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 0, 0);
+color: rgb(0, 0, 0);
+</string>
    </property>
    <property name="text">
     <string>شماره کارت جدید</string>
@@ -70,44 +91,65 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>90</y>
-     <width>201</width>
-     <height>28</height>
+     <x>50</x>
+     <y>70</y>
+     <width>151</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(85, 85, 127);
+</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>150</y>
-     <width>201</width>
-     <height>28</height>
+     <x>50</x>
+     <y>10</y>
+     <width>151</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(85, 85, 127);
+</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>220</y>
-     <width>71</width>
+     <x>200</x>
+     <y>40</y>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 0, 0);
+color: rgb(0, 0, 0);
+</string>
+   </property>
    <property name="text">
-    <string>cvv2 جدید</string>
+    <string>     cvv2 جدید</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>62</x>
-     <y>220</y>
-     <width>201</width>
-     <height>28</height>
+     <x>50</x>
+     <y>40</y>
+     <width>151</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(85, 85, 127);
+</string>
    </property>
   </widget>
  </widget>

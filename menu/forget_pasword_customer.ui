@@ -26,7 +26,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(170, 170, 255);</string>
+   <string notr="true">background-image: url();
+background-color: rgb(243, 255, 203);</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -36,6 +37,10 @@
      <width>341</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 85, 0);
+color: rgb(170, 0, 0);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -47,11 +52,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>290</x>
      <y>60</y>
      <width>61</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+color: rgb(0, 0, 0);
+background-color: rgb(170, 0, 0);</string>
    </property>
    <property name="text">
     <string>نام کاربری. </string>
@@ -60,21 +70,31 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>60</x>
      <y>60</y>
      <width>231</width>
-     <height>28</height>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 170, 255);
+</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>290</x>
      <y>150</y>
-     <width>51</width>
+     <width>61</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+color: rgb(0, 0, 0);
+background-color: rgb(170, 0, 0);</string>
    </property>
    <property name="text">
     <string>رمز جدید</string>
@@ -83,11 +103,16 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>60</x>
      <y>150</y>
      <width>231</width>
-     <height>28</height>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 170, 255);
+</string>
    </property>
   </widget>
  </widget>

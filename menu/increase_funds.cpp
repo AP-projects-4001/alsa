@@ -3,22 +3,13 @@
 #include <qpixmap.h>
 #include <QMessageBox>
 #include <QFile>
-void Increase_funds::set()
-{
-    QPixmap pix("E:/oneHode/post/11.jfif");
-    int w = ui->label->width();
-    int h = ui->label_2->height();
-    ui->label->setPixmap(pix.scaled(w,h));
-}
 Increase_funds::Increase_funds(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Increase_funds)
 {
     ui->setupUi(this);
-    set();
-}
-/*******************/
 
+}
 Increase_funds::~Increase_funds()
 {
     delete ui;

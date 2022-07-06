@@ -146,3 +146,5 @@ if(l[-1] == 'w\n'):
         sleep(0.5)
     
         flag+=1       
+file3 = open('sound.txt', 'w')
+file3.close()

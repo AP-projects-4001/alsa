@@ -22,8 +22,6 @@ private slots:
 private:
     Ui::Increase_funds *ui;
     void increas();
-    void set();
-
 };
 
 #endif // INCREASE_FUNDS_H

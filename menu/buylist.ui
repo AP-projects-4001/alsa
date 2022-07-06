@@ -19,11 +19,19 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(222, 255, 237);
+background-color: rgb(170, 170, 127);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 85, 127);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>تعداد</string>
        </property>
@@ -38,7 +46,9 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: center;</string>
+        <string notr="true">background-image: url();
+
+text-align: center;</string>
        </property>
        <property name="readOnly">
         <bool>true</bool>
@@ -60,6 +70,10 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 85, 127);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>قیمت کل(تومان)</string>
        </property>
@@ -68,7 +82,8 @@
      <item>
       <widget class="QLineEdit" name="lineEdit_2">
        <property name="styleSheet">
-        <string notr="true">text-align:center ;</string>
+        <string notr="true">background-image: url();
+text-align:center ;</string>
        </property>
        <property name="readOnly">
         <bool>true</bool>
@@ -104,6 +119,9 @@
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -123,6 +141,10 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="pushButton_3">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>خالی کردن سبد خرید</string>
        </property>
@@ -130,6 +152,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_4">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 85, 0);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>تکمیل فرایند خرید</string>
        </property>
@@ -137,6 +163,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>بازگشت</string>
        </property>

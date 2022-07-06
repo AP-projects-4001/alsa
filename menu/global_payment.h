@@ -8,8 +8,6 @@ class global_Payment
 protected:
 
     virtual void increas() = 0;
-
-    virtual void set()= 0;
     
 };
 

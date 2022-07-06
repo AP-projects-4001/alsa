@@ -7,7 +7,8 @@
 #include <QMessageBox>
 #include "list_pruduct.h"
 #include <QFile>
-
+#include<QUrl>
+#include<QDesktopServices>
 Admin::Admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Admin)
@@ -88,5 +89,15 @@ void Admin::on_pushButton_6_clicked()
 
     temp->show();
     emit sendUserName("admin");
+}
+
+
+void Admin::on_pushButton_9_clicked()
+{
+    QString link = "https://edbazar.com/electronic/CategoryPages/Index/1/"
+                   "%D9%84%DB%8C%D8%B3%D8%AA-%D9%82%DB%8C"
+                   "%D9%85%D8%AA-%D9%85%D8%AD%""D8%B5%D9%88%D9"
+                   "%84%D8%A7%D8%AA-%""D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84";
+    QDesktopServices::openUrl(QUrl(link));
 }
 

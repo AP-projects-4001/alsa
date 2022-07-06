@@ -32,18 +32,18 @@ while True:
             f.write("ali")
             f.close()
             chek = 1
-        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+        cv2.rectangle(frame, (left, top), (right, bottom), (225, 0, 0), 2)
 
-        cv2.rectangle(frame, (left, bottom -35), (right, bottom), (0, 0, 255), cv2.FILLED)
+        cv2.rectangle(frame, (left, bottom -35), (right, bottom), (225, 0, 0), cv2.FILLED)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+        cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (225, 225, 225), 1)
        
     cv2.imshow('Webcam_facerecognition', frame)
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
     if(chek == 1):
-        sleep(5);
+        sleep(3);
         exit(0);
 
 video_capture.release()

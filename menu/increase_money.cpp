@@ -3,18 +3,11 @@
 #include <qpixmap.h>
 #include <QMessageBox>
 #include <QFile>
-void increase_money::set(){
-    QPixmap pix("D:\\11.jfif");
-    int w = ui->label->width();
-    int h = ui->label_2->height();
-    ui->label->setPixmap(pix.scaled(w,h));
-}
 increase_money::increase_money(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::increase_money)
 {
     ui->setupUi(this);
-    set();
 }
 increase_money::~increase_money()
 {
