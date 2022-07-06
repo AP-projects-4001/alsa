@@ -124,6 +124,15 @@ void increase_money::increas()
              check_buy = true;
              int M = Money[i].toInt();
              M = M - ui->lineEdit_4->text().toInt();
+             if(M < 0){
+                 int ret;
+                 QMessageBox msgBox;
+                 msgBox.setText("موجودی کافی نیست :(((((((");
+                 ret = msgBox.exec();
+                 increas_money_of_customer();
+                 return;
+             }
+       /**************************************************************************/
              Money.replace(i,QVariant(M).toString());
              write_to_file("Login_client.txt");
              int ret;

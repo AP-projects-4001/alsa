@@ -9,6 +9,7 @@
 #include <QFile>
 #include<QUrl>
 #include<QDesktopServices>
+#include"reports.h"
 Admin::Admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Admin)
@@ -99,5 +100,12 @@ void Admin::on_pushButton_9_clicked()
                    "%D9%85%D8%AA-%D9%85%D8%AD%""D8%B5%D9%88%D9"
                    "%84%D8%A7%D8%AA-%""D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84";
     QDesktopServices::openUrl(QUrl(link));
+}
+
+
+void Admin::on_pushButton_7_clicked()
+{
+    reports* d = new reports(this);
+    d->show();
 }
 

@@ -567,7 +567,7 @@ void list_pruduct::on_advanced_search_clicked()
 
 void list_pruduct::advanced_search_get(QString cat, QString color, QString sor, int state, long long min, long long max, QString info1, QString info2)
 {
-    read(type,"all",min,max,state,color,info1,info2);
+    read(type,"All",min,max,state,color,info1,info2);
     sort(sor);
     show_list(1);
 }
