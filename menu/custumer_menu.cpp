@@ -54,7 +54,7 @@ void custumer_menu::getUserName(QString str)
 
 void custumer_menu::on_pushButton_clicked()
 {
-    list_pruduct* temp = new list_pruduct{this};
+    list_pruduct* temp = new list_pruduct{};
     connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
 
     temp->show();
@@ -86,8 +86,11 @@ void custumer_menu::on_pushButton_3_clicked()
 
     if(line_count == 0)
     {
-        QMessageBox::warning(this,"اخطار","تاریخچه تراکنش ها خالی است");
-        return;
+              int ret;
+              QMessageBox msgBox;
+              msgBox.setText("تاریخچه تراکنش ها خالی است !!!!!");
+              ret = msgBox.exec();
+              return;
     }
 
     history* temp = new history{this};
@@ -98,7 +101,11 @@ void custumer_menu::on_pushButton_3_clicked()
 
 void custumer_menu::on_pushButton_4_clicked()
 {
-    QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
+    int ret;
+    QMessageBox msgBox;
+    msgBox.setText("خدانگهدار");
+    ret = msgBox.exec();
     close();
+     return;
 }
 

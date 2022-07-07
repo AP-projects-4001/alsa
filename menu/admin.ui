@@ -35,14 +35,14 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-image: url(:/photos/adminglob.png);</string>
   </property>
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>390</y>
-     <width>321</width>
+     <x>340</x>
+     <y>370</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
@@ -58,16 +58,16 @@ background-color: rgb(170, 0, 0);</string>
   <widget class="QPushButton" name="pushButton_10">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>20</y>
-     <width>321</width>
+     <x>340</x>
+     <y>-2</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>لیست کاربران</string>
@@ -76,9 +76,9 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>60</y>
-     <width>321</width>
+     <x>340</x>
+     <y>40</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
@@ -96,8 +96,8 @@ background-color: rgb(0, 85, 127);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>بلاک کردن کاربر</string>
@@ -106,16 +106,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>100</y>
-     <width>321</width>
+     <x>340</x>
+     <y>80</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>آنبلاک کردن کاربر</string>
@@ -124,16 +124,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>321</width>
+     <x>340</x>
+     <y>120</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>تاریخچه تراکنش ها</string>
@@ -142,16 +142,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>180</y>
-     <width>321</width>
+     <x>340</x>
+     <y>160</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>مدیریت کالا ها</string>
@@ -160,16 +160,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>220</y>
-     <width>321</width>
+     <x>340</x>
+     <y>200</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>تغیر اطلاعات کاربر</string>
@@ -178,16 +178,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>260</y>
-     <width>321</width>
+     <x>340</x>
+     <y>240</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>بررسی گزارشات</string>
@@ -196,16 +196,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>340</y>
-     <width>321</width>
+     <x>340</x>
+     <y>320</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>اطلاع از قیمت روز اجناس</string>
@@ -214,16 +214,16 @@ background-color: rgb(0, 85, 127);</string>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>300</y>
-     <width>321</width>
+     <x>340</x>
+     <y>280</y>
+     <width>161</width>
      <height>29</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url();
-color: rgb(0, 0, 0);
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(85, 85, 127);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>حذف کاربر</string>

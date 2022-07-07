@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url();
+background-color: rgb(170, 170, 127);</string>
+  </property>
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
@@ -92,7 +96,7 @@
      <x>110</x>
      <y>140</y>
      <width>131</width>
-     <height>241</height>
+     <height>299</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">

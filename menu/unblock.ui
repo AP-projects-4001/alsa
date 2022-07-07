@@ -26,8 +26,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/unblock.png);
-</string>
+   <string notr="true">background-image: url(:/photos/unblock.png);</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">

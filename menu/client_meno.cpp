@@ -38,11 +38,14 @@ void client_meno::on_pushButton_clicked()
 
     if(line_count == 0)
     {
-        QMessageBox::warning(this,"اخطار","هیچ کالایی وجود ندارد");
+        int ret;
+              QMessageBox msgBox;
+              msgBox.setText("هیچ کالایی موجود نیست !!!!!");
+              ret = msgBox.exec();
         return;
     }
 
-    list_pruduct* temp = new list_pruduct{this};
+    list_pruduct* temp = new list_pruduct{};
     connect(this, SIGNAL(sendUserName(QString)), temp, SLOT(getUserName(QString)));
 
     temp->show();
@@ -87,7 +90,10 @@ void client_meno::on_pushButton_3_clicked()
 
     if(count == 0)
     {
-        QMessageBox::information(this,"اخطار","سبذ خرید خالی می باشد");
+        int ret;
+        QMessageBox msgBox;
+        msgBox.setText(" سبد خرید خالی  است!!!!!");
+        ret = msgBox.exec();
         return;
     }
 
@@ -122,7 +128,10 @@ void client_meno::on_pushButton_2_clicked()
 
     if(line_count == 0)
     {
-        QMessageBox::warning(this,"اخطار","تاریخچه تراکنش ها خالی است");
+        int ret;
+        QMessageBox msgBox;
+        msgBox.setText(" تاریخچه تراکنش ها خالی است!!!!!");
+        ret = msgBox.exec();
         return;
     }
 
@@ -134,6 +143,9 @@ void client_meno::on_pushButton_2_clicked()
 
 void client_meno::on_exit_clicked()
 {
-    QMessageBox::information(this,"خدانگهدار","خسته نباشید!");
+    int ret;
+    QMessageBox msgBox;
+    msgBox.setText(" خدانگهدار.");
+    ret = msgBox.exec();
     close();
 }

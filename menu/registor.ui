@@ -26,9 +26,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">alternate-background-color: rgb(0, 0, 0);
-background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/registor.png);
-</string>
+   <string notr="true">background-image: url(:/photos/registor.png);</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">

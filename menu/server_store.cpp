@@ -5,7 +5,6 @@ server_store::server_store()
 {
 
 }
-
 void server_store::run()
 {
     MainWindow* temp = new MainWindow;

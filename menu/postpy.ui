@@ -26,8 +26,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/post_global.png);
-</string>
+   <string notr="true">background-image: url(:/photos/post_global.png);</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">

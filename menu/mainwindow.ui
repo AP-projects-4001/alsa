@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/login.png);</string>
+   <string notr="true">background-image: url(:/photos/login.png);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="lineEdit">

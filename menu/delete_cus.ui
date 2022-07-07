@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>250</height>
+    <height>168</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>300</width>
-    <height>250</height>
+    <height>168</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>300</width>
-    <height>250</height>
+    <height>168</height>
    </size>
   </property>
   <property name="sizeIncrement">
@@ -31,17 +31,21 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/photos/delete.png);</string>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>-100</x>
-     <y>180</y>
-     <width>341</width>
+     <x>-60</x>
+     <y>130</y>
+     <width>300</width>
      <height>32</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 170, 0);
+    <string notr="true">background-image: url();
+background-color: rgb(85, 170, 0);
 color: rgb(170, 0, 0);</string>
    </property>
    <property name="orientation">
@@ -54,27 +58,33 @@ color: rgb(170, 0, 0);</string>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>110</y>
-     <width>231</width>
-     <height>28</height>
+     <x>50</x>
+     <y>20</y>
+     <width>191</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 85, 127);</string>
+    <string notr="true">background-image: url();
+background-color: rgb(85, 85, 127);</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>60</y>
-     <width>201</width>
+     <x>0</x>
+     <y>0</y>
+     <width>301</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url();
+background-color: rgb(170, 0, 0);
+color: rgb(0, 85, 0);</string>
+   </property>
    <property name="text">
-    <string>نام کاربری فروشنده را وارد کنید</string>
+    <string>           نام کاربری فروشنده را وارد کنید</string>
    </property>
   </widget>
  </widget>

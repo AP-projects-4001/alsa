@@ -26,14 +26,15 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(C:/Users/digitall home/Documents/Ap/alsa/menu/member.png);</string>
+   <string notr="true">background-image: url(:/photos/member.png);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1">
     <widget class="QPushButton" name="pushButton_2">
      <property name="styleSheet">
       <string notr="true">background-image: url();
-background-color: rgb(0, 85, 127);</string>
+color: rgb(170, 0, 0);
+background-color: rgb(0, 0, 127);</string>
      </property>
      <property name="text">
       <string>لیست خریدار ها</string>
@@ -57,7 +58,8 @@ background-color: rgb(0, 85, 127);</string>
     <widget class="QPushButton" name="pushButton_3">
      <property name="styleSheet">
       <string notr="true">background-image: url();
-background-color: rgb(0, 85, 127);</string>
+background-color: rgb(170, 0, 0);
+color: rgb(0, 85, 0);</string>
      </property>
      <property name="text">
       <string>بازگشت</string>
@@ -68,7 +70,8 @@ background-color: rgb(0, 85, 127);</string>
     <widget class="QPushButton" name="pushButton">
      <property name="styleSheet">
       <string notr="true">background-image: url();
-background-color: rgb(43, 81, 127);</string>
+color: rgb(170, 0, 0);
+background-color: rgb(0, 0, 127);</string>
      </property>
      <property name="text">
       <string>لیست فروشنده</string>
