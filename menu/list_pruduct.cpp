@@ -342,10 +342,47 @@ void list_pruduct::on_buy_button(QString id)
 void list_pruduct::on_detail_button(QString id)
 {
     Product_detail* temp = new Product_detail{this};
-    connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getPruductId(QString)));
-    temp->show();
+        connect(this, SIGNAL(sendPruductId(QString)), temp, SLOT(getPruductId(QString)));
+        temp->show();
 
-    emit sendPruductId(id);
+        emit sendPruductId(id);
+
+        QVector<QString> lines;
+        QFile inputFile("prudoct.txt");
+        QStringList split;
+        QString line;
+
+        if (inputFile.open(QIODevice::ReadOnly))
+        {
+           QTextStream in(&inputFile);
+
+           for (int i = 0; ; i++)
+           {
+              line = in.readLine();
+              split = line.split(",");
+
+              if(line == "")
+                  break;
+
+              if(split[11] == id)
+                  line = split[0] + "," + split[1] + "," + split[2] + "," + split[3] + "," +
+                  split[4] + "," + split[5] + "," + QString::number(split[6].toInt()+1) + "," + split[7] + "," +
+                  split[8] + "," + split[9] + "," + split[10] + "," + split[11] + "," + split[12];
+
+              lines.push_back(line);
+           }
+
+           inputFile.close();
+        }
+
+        QFile file("prudoct.txt");
+        file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+        QTextStream stream( &file );
+        for(int i = 0; i < lines.length(); i++)
+            stream << lines.at(i) << "\n";
+
+        file.close();
+        lines.clear();
 }
 
 void list_pruduct::get_end(QString)
@@ -567,7 +604,7 @@ void list_pruduct::on_advanced_search_clicked()
 
 void list_pruduct::advanced_search_get(QString cat, QString color, QString sor, int state, long long min, long long max, QString info1, QString info2)
 {
-    read(type,"All",min,max,state,color,info1,info2);
+    read(type,"All",min,max,state,color,info1,info2,cat);
     sort(sor);
     show_list(1);
 }

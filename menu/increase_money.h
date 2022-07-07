@@ -46,7 +46,23 @@ private:
     QVector<QString> counter_remove;
     QVector<QString> id_remove;
     QVector<QString> id;
-
+/**************************************************/
+    QVector<QString>n_cl;
+    QVector<QString>n_pr;
+    QVector<QString>n_price;
+    QVector<QString>n_num;
+    QVector<QString>n_col;
+    QVector<QString>n_dis;
+    QVector<QString>n_seen;
+    QVector<QString>n_num_buy;
+    QVector<QString>n_glob1;
+    QVector<QString>n_glob2;
+    QVector<QString>n_exp;
+    QVector<QString>n_id;
+    QVector<QString>n_w;
+    void Read_file_prd();
+    void Write_to_file_prd();
+/***************************************************/
     bool check_buy = false;
     void increas();
 };

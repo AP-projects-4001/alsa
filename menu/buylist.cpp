@@ -277,7 +277,7 @@ void buylist::show_list()
           QString line = in.readLine();
           split = line.split(",");
 
-          if(split[1] == username)
+          if(split[1] == username && check_customer(split[4]))
           {
               lay->addWidget(createGroup(split[4]));
               count++;
@@ -324,6 +324,59 @@ void buylist::on_detail_button(QString id)
 
 void buylist::on_pushButton_4_clicked()
 {
+    QFile inputFile("prudoct.txt");
+    QStringList split;
+
+    QFile buyfile("buylist.txt");
+    QVector<QString> lines;
+
+    if (buyfile.open(QIODevice::ReadOnly))
+    {
+        QTextStream in1(&buyfile);
+
+        for (int i = 0; !in1.atEnd(); i++)
+        {
+           QString line1 = in1.readLine();
+
+           if(line1 == "")
+              break;
+
+           lines.push_back(line1);
+        }
+
+        buyfile.close();
+    }
+
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+
+       for (int i = 0; !in.atEnd(); i++)
+       {
+          QString line = in.readLine();
+
+          split = line.split(",");
+
+          if(line == "")
+              break;
+
+          for(int j = 0; j < lines.length(); j++)
+          {
+              QStringList split1 = lines[j].split(",");
+
+              if(split1[3].toInt() > split[3].toInt() && username == split1[1] && split[11] == split1[4])
+              {
+                  QMessageBox::warning(this,"اخطار","موجودی کالا کافی نیست");
+                  show_list();
+                  spin_count_changed(1);
+                  return;
+              }
+          }
+       }
+
+       inputFile.close();
+    }
+
     QString dis= "";
     if(Chek == 0){
           PostPy* D = new PostPy(this);
@@ -362,6 +415,30 @@ void buylist::on_pushButton_4_clicked()
           }
        }
     Chek++;
+}
+
+bool buylist::check_customer(QString id)
+{
+    QFile inputFile("prudoct.txt");
+    QStringList split;
+
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+
+       for (int i = 0; !in.atEnd(); i++)
+       {
+          QString line = in.readLine();
+          split = line.split(",");
+
+          if(split[11] == id)
+              return true;
+       }
+
+       inputFile.close();
+    }
+
+    return false;
 }
 
 int buylist::count_calculate(QString id)

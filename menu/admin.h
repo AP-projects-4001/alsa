@@ -35,6 +35,8 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_pushButton_10_clicked();
+
 signals:
     void sendUserName(QString);
 

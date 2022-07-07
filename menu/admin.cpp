@@ -10,6 +10,7 @@
 #include<QUrl>
 #include<QDesktopServices>
 #include"reports.h"
+#include"list_accounts.h"
 Admin::Admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Admin)
@@ -106,6 +107,13 @@ void Admin::on_pushButton_9_clicked()
 void Admin::on_pushButton_7_clicked()
 {
     reports* d = new reports(this);
+    d->show();
+}
+
+
+void Admin::on_pushButton_10_clicked()
+{
+    list_accounts* d = new list_accounts(this);
     d->show();
 }
 

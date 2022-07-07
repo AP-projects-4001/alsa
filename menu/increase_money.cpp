@@ -13,6 +13,62 @@ increase_money::~increase_money()
 {
     delete ui;
 }
+void increase_money::Read_file_prd(){
+    QFile myfile("prudoct.txt");
+    if(!myfile.open(QFile::ReadOnly |QFile::Text))
+    {
+       return;
+    }
+    QTextStream in(&myfile);
+    while (!in.atEnd()){
+            QString myText = in.readLine();
+            QStringList List = myText.split(',');
+            n_cl.push_back(List[0]);
+            n_pr.push_back(List[1]);
+            n_price.push_back(List[2]);
+            n_num.push_back(List[3]);
+            n_col.push_back(List[4]);
+            n_dis.push_back(List[5]);
+            n_seen.push_back(List[6]);
+            n_num_buy.push_back(List[7]);
+            n_glob1.push_back(List[8]);
+            n_glob2.push_back(List[9]);
+            n_exp.push_back(List[10]);
+            n_id.push_back(List[11]);
+            n_w.push_back(List[12]);
+         }
+         myfile.close();
+}
+void increase_money::Write_to_file_prd(){
+    QFile file("prudoct.txt");
+    if(!file.open(QFile::WriteOnly | QFile::Text))
+    {
+      qDebug() << " Could not open file for writing";
+      return;
+    }
+    QTextStream out(&file);
+    int i=0;
+    while (i <n_cl.size())
+    {
+        out  <<n_cl[i]<<','
+               << n_pr[i]<<','
+               <<n_price[i]<<','
+               <<n_num[i]<<','
+               <<n_col[i]<<','
+               << n_dis[i]<<','
+               <<n_seen[i]<<','
+               <<n_num_buy[i]<<','
+               <<n_glob1[i]<<','
+               <<n_glob2[i]<<','
+               <<n_exp[i]<<','
+               <<n_id[i]<<','
+               <<n_w[i]<<'\n';
+        i++;
+    }
+    file.flush();
+    file.close();
+}
+/**************************************/
 void increase_money::Read_file_buylist(){
     QFile myfile("buylist.txt");
     if(!myfile.open(QFile::ReadOnly |QFile::Text))
@@ -32,6 +88,7 @@ void increase_money::Read_file_buylist(){
          }
          myfile.close();
 }
+
 void increase_money:: Read_file_history(){
     QFile myfile("history.txt");
     if(!myfile.open(QFile::ReadOnly |QFile::Text))
@@ -100,6 +157,7 @@ void increase_money::add_money(QString money)
 void increase_money::increas()
 {
 
+    Read_file_prd();
     read_file("Login_client.txt");
     bool is_valid = false;
     int i = 0;
@@ -132,7 +190,7 @@ void increase_money::increas()
                  increas_money_of_customer();
                  return;
              }
-       /**************************************************************************/
+
              Money.replace(i,QVariant(M).toString());
              write_to_file("Login_client.txt");
              int ret;
@@ -173,6 +231,14 @@ void increase_money::increas_money_of_customer()
                      int M = money[j].toInt() + price[i].toInt();
                      money.replace(j,QVariant(M).toString());
                    }
+                 }
+                 for (int k = 0 ; k < n_cl.size() ; k++){
+                     if(n_id[k] ==id[i]){
+                         int M = n_num[k].toInt() - counter[i].toInt();
+                         QString tmp = QString::number(M);
+                         n_num.replace(k,tmp);
+                         Write_to_file_prd();
+                     }
                  }
              }else{
                  customer_name_remove.push_back(customer_name[i]);
