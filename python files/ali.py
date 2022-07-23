@@ -93,7 +93,7 @@ elif(myState == 'tehran'):
     mylist[29] +=1;
 elif(myState == 'yazd'):
     mylist[30] +=1;
-elif(myState == 'zanjzn'):
+elif(myState == 'zanjan'):
     mylist[31] +=1;                  
 else:
     print('This state does not exist...!!!')
@@ -106,7 +106,6 @@ Reg = LinearRegression();
 all = df4.drop(['price'],axis='columns');
 P = df4.price;
 Reg.fit(all,P);
-x2 = 0
 x2 =(Reg.predict
 ([[dist,mylist[0],mylist[1],mylist[2],mylist[3],mylist[4]
 ,mylist[5],mylist[6],mylist[7],mylist[8],mylist[9],mylist[10]
